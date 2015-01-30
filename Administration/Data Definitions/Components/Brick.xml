@@ -1,0 +1,9 @@
+<system-data-structure>
+  <text identifier="brickName"/>
+  <text type="radiobutton" identifier="brickType" label="Brick Type" default="word">
+    <radio-item value="word" show-fields="brickValueWord"/>
+    <radio-item value="sentence" show-fields="brickValueSentence"/>
+  </text>
+  <text identifier="brickValueWord" label="Brick Value"/>
+  <text wysiwyg="true" identifier="brickValueSentence" label="Brick Value"/>
+</system-data-structure>

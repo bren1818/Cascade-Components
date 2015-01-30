@@ -1,0 +1,54 @@
+<system-data-structure>
+    <group identifier="main-content" label="Main Content">
+        <asset type="block" identifier="left-col-spifs" label="Left Column SPIF" render-content-depth="2"/>
+        <group identifier="featured-image" label="Featured Image" collapsed="true">
+            <text type="radiobutton" identifier="bank-or-image" label="Use a random or page-specific image?" default="Random">
+                <radio-item value="Random"/>
+                <radio-item value="Page-specific" show-fields="main-content/featured-image/image, main-content/featured-image/youtube"/>
+            </text>
+            <asset type="file" identifier="image" label="Image" required="true"/>
+            <text identifier="youtube" label="YouTube Video (optional)" regular-expression="/^https:\/\/www\.youtube\.com\/watch\?v=.*$/" input-data-format="the URL from your browser location bar while viewing a YouTube video"/>
+        </group>
+        <group identifier="cta-btn" label="Call to Action Button">
+            <text type="radiobutton" identifier="showCTA" label="Show Call to Action Button" default="No">
+                <radio-item value="Yes" show-fields="main-content/cta-btn/ctaLabel, main-content/cta-btn/cta-button-color, main-content/cta-btn/cta-link-type"/>
+                <radio-item value="No"/>
+            </text>
+            <text identifier="ctaLabel" label="Call to action button text" default="Apply Now" required="true"/>
+            <text type="dropdown" identifier="cta-button-color" label="Button Color" default="red" required="true">
+                <dropdown-item value="red"/>
+                <dropdown-item value="purple"/>
+                <dropdown-item value="green"/>
+                <dropdown-item value="black"/>
+            </text>
+            <text type="radiobutton" identifier="cta-link-type" label="Link Type" default="Internal" required="true">
+                <radio-item value="Internal" show-fields="main-content/cta-btn/cta-internal-page"/>
+                <radio-item value="External" show-fields="main-content/cta-btn/cta-external-page"/>
+            </text>
+            <asset type="page" identifier="cta-internal-page" label="Internal Page" required="true"/>
+            <text identifier="cta-external-page" label="External Link" required="true"/>
+        </group>
+        <text wysiwyg="true" identifier="content" label="Content"/>
+        <text type="radiobutton" identifier="use-additional-content" label="Hide additional content behind a 'view more' link?" default="No">
+            <radio-item value="No"/>
+            <radio-item value="Yes" show-fields="main-content/additional-content"/>
+        </text>
+        <text wysiwyg="true" identifier="additional-content" label="Additional Content"/>
+    </group>
+    <text type="radiobutton" identifier="highlights-toggle" label="Show content highlight columns?" default="Yes">
+        <radio-item value="Yes" show-fields="content-highlights"/>
+        <radio-item value="No"/>
+    </text>
+    <group identifier="content-highlights" label="Content Highlights (maximum 4)" multiple="true" maximum-number="4" minimum-number="1" collapsed="true">
+        <text identifier="heading" label="Heading" required="true"/>
+        <text wysiwyg="true" identifier="content" label="Content" required="true"/>
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="No Link">
+            <radio-item value="No Link"/>
+            <radio-item value="Internal" show-fields="content-highlights/link-text, content-highlights/page"/>
+            <radio-item value="External" show-fields="content-highlights/url, content-highlights/link-text"/>
+        </text>
+        <text identifier="link-text" label="Link Text" required="true"/>
+        <asset type="page" identifier="page" label="Internal Page" required="true"/>
+        <text identifier="url" label="External URL" required="true"/>
+    </group>
+</system-data-structure>

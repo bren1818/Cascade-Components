@@ -1,0 +1,133 @@
+<system-data-structure>
+    <group identifier="banner-image" label="Top Banner">
+        <asset type="file" identifier="image" label="Image (1280 x 598)" required="true"/>
+        <text identifier="alt" label="Alternate Text" required="true"/>
+        <text identifier="youtube" label="YouTube Video (optional)"/>
+        <text type="radiobutton" identifier="banner-overlay-toggle" label="Overlay this banner with text?" default="No">
+            <radio-item value="Yes" show-fields="banner-image/title, banner-image/heading, banner-image/content, banner-image/callout-button-toggle"/>
+            <radio-item value="No"/>
+        </text>
+        <text identifier="title" label="Title"/>
+        <text identifier="heading" label="Heading" required="true"/>
+        <text multi-line="true" identifier="content" label="Content" required="true"/>
+        <text type="radiobutton" identifier="callout-button-toggle" label="Use a callout button?" default="No">
+            <radio-item value="Yes" show-fields="banner-image/button-text, banner-image/link-type"/>
+            <radio-item value="No"/>
+        </text>
+        <text identifier="button-text" label="Button Text" required="true"/>
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+            <radio-item value="Internal" show-fields="banner-image/page"/>
+            <radio-item value="External" show-fields="banner-image/url"/>
+        </text>
+        <asset type="page" identifier="page" label="Page" required="true"/>
+        <text identifier="url" label="External URL" required="true"/>
+        <text type="radiobutton" identifier="carousel-toggle" label="Would you like to create a multi-image carousel?" default="No">
+            <radio-item value="Yes" show-fields="banner-image/banner-image"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="banner-image" label="Additional Slide " multiple="true">
+            <asset type="file" identifier="image" label="Image (1280 x 598)" required="true"/>
+            <text identifier="alt" label="Alternate Text" required="true"/>
+            <text identifier="youtube" label="YouTube Video (optional)"/>
+            <text type="radiobutton" identifier="banner-overlay-toggle" label="Overlay this banner with text?" default="No">
+                <radio-item value="Yes" show-fields="banner-image/banner-image/title, banner-image/banner-image/heading, banner-image/banner-image/content, banner-image/banner-image/callout-button-toggle"/>
+                <radio-item value="No"/>
+            </text>
+            <text identifier="title" label="Title"/>
+            <text identifier="heading" label="Heading" required="true"/>
+            <text multi-line="true" identifier="content" label="Content" required="true"/>
+            <text type="radiobutton" identifier="callout-button-toggle" label="Use a callout button?" default="No">
+                <radio-item value="Yes" show-fields="banner-image/banner-image/button-text, banner-image/banner-image/link-type"/>
+                <radio-item value="No"/>
+            </text>
+            <text identifier="button-text" label="Button Text" required="true"/>
+            <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+                <radio-item value="Internal" show-fields="banner-image/banner-image/page"/>
+                <radio-item value="External" show-fields="banner-image/banner-image/url"/>
+            </text>
+            <asset type="page" identifier="page" label="Page" required="true"/>
+            <text identifier="url" label="External URL" required="true"/>
+        </group>
+    </group>
+    <group identifier="main-content" label="Main Content">
+        <asset type="block" identifier="left-col-spif" label="Left Column SPIF" render-content-depth="2"/>
+        <text wysiwyg="true" identifier="content" label="Content"/>
+        <text type="radiobutton" identifier="use-additional-content" label="Hide additional content behind a 'view more' link?" default="No">
+            <radio-item value="No"/>
+            <radio-item value="Yes" show-fields="main-content/additional-content"/>
+        </text>
+        <text wysiwyg="true" identifier="additional-content" label="Additional Content"/>
+        <asset type="block" identifier="right-col-spif" label="Right Column SPIF" render-content-depth="2" required="true"/>
+    </group>
+    <group identifier="content-highlights" label="Content Highlights (maximum 4)" multiple="true" maximum-number="4" minimum-number="1" collapsed="true">
+        <text identifier="heading" label="Heading"/>
+        <text wysiwyg="true" identifier="content" label="Content"/>
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="No Link">
+            <radio-item value="No Link"/>
+            <radio-item value="Internal" show-fields="content-highlights/link-text, content-highlights/page"/>
+            <radio-item value="External" show-fields="content-highlights/url, content-highlights/link-text"/>
+        </text>
+        <text identifier="link-text" label="Link Text"/>
+        <asset type="page" identifier="page" label="Internal Page"/>
+        <text identifier="url" label="External URL"/>
+    </group>
+    <text type="radiobutton" identifier="spotlight-columns-toggle" label="Show highlight columns?" default="Yes">
+        <radio-item value="Yes" show-fields="spotlight-columns"/>
+        <radio-item value="No"/>
+    </text>
+    <group identifier="spotlight-columns" label="Highlight Columns">
+        <text type="dropdown" identifier="layout" label="Layout" default="1-1-1-1">
+            <dropdown-item value="1-1-1-1" show-fields="spotlight-columns/col-one, spotlight-columns/col-two, spotlight-columns/col-three, spotlight-columns/col-four, spotlight-columns/col-one/block1, spotlight-columns/col-two/block1, spotlight-columns/col-three/block3, spotlight-columns/col-four/block4"/>
+            <dropdown-item value="1-2-1" show-fields="spotlight-columns/col-one, spotlight-columns/col-two, spotlight-columns/col-three, spotlight-columns/col-one/block1, spotlight-columns/col-two/block1, spotlight-columns/col-two/block2, spotlight-columns/col-three/block3"/>
+        </text>
+        <group identifier="col-one" label="First Column">
+            <text identifier="heading" label="Heading" required="true"/>
+            <asset type="block" identifier="block1" label="SPIF Block" render-content-depth="2"/>
+        </group>
+        <group identifier="col-two" label="Second Column">
+            <text identifier="heading" label="Heading" required="true"/>
+            <asset type="block" identifier="block1" label="SPIF Block" render-content-depth="2"/>
+            <asset type="block" identifier="block2" label="SPIF Block" render-content-depth="2"/>
+        </group>
+        <group identifier="col-three" label="Third Column">
+            <text identifier="heading" label="Heading"/>
+            <asset type="block" identifier="block1" label="SPIF Block" render-content-depth="2"/>
+        </group>
+        <group identifier="col-four" label="Fourth Column">
+            <text identifier="heading" label="Heading" required="true"/>
+            <asset type="block" identifier="block1" label="SPIF Block" render-content-depth="2"/>
+        </group>
+    </group>
+    <group identifier="spotlights" label="Spotlights">
+        <text type="dropdown" identifier="tag" label="Content Tag" multiple="true">
+            <dropdown-item value="Homepage"/>
+            <dropdown-item value="Future Students"/>
+            <dropdown-item value="Alumni"/>
+            <dropdown-item value="Giving"/>
+            <dropdown-item value="Faculty of Arts"/>
+            <dropdown-item value="Faculty of Education"/>
+            <dropdown-item value="Faculty of Liberal Arts"/>
+            <dropdown-item value="Faculty of Human and Social Sciences"/>
+            <dropdown-item value="Faculty of Sciences"/>
+            <dropdown-item value="School of Business and Economics"/>
+            <dropdown-item value="School of International Policy &amp; Governance"/>
+            <dropdown-item value="Faculty of Graduate &amp; Postdoctoral Studies"/>
+            <dropdown-item value="Research"/>
+            <dropdown-item value="Library"/>
+            <dropdown-item value="News"/>
+        </text>
+    </group>
+    <group identifier="events" label="Events">
+        <text identifier="events-header" label="Events Header"/>
+        <asset type="block" identifier="block" label="Events Feed" render-content-depth="2"/>
+        <text type="radiobutton" identifier="link-type" label="More Events Link Type" default="Internal">
+            <radio-item value="Internal" show-fields="events/page"/>
+            <radio-item value="External" show-fields="events/url"/>
+        </text>
+        <asset type="page" identifier="page" label="Page"/>
+        <text identifier="url" label="External URL"/>
+    </group>
+    <group identifier="footer-spif" label="Footer SPIF">
+        <asset type="block" identifier="spif-block" label="SPIF Block" render-content-depth="2"/>
+    </group>
+</system-data-structure>

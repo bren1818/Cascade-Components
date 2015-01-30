@@ -1,0 +1,30 @@
+<system-data-structure>
+    <text identifier="key" label="key - do not change" restrict-to-groups="Administrators" default="custom-spif"/>
+    <group identifier="featured-image" label="Optional Image / Video">
+        <text type="radiobutton" identifier="contentType" label="Video or Image" default="None" required="true">
+            <radio-item value="Image" show-fields="featured-image/image, featured-image/linkOnImage"/>
+            <radio-item value="Video" show-fields="featured-image/youtube, featured-image/Image, featured-image/popup"/>
+            <radio-item value="None"/>
+        </text>
+        <asset type="file" identifier="image" label="Image" required="true"/>
+        <text type="radiobutton" identifier="linkOnImage" label="Add Link to Image" default="No">
+            <radio-item value="Yes" show-fields="featured-image/link"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="link" label="link">
+            <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal" required="true">
+                <radio-item value="Internal" show-fields="featured-image/link/page"/>
+                <radio-item value="External" show-fields="featured-image/link/url"/>
+            </text>
+            <asset type="page" identifier="page" label="Page"/>
+            <text identifier="url" label="External URL"/>
+            <text type="radiobutton" identifier="new-window-toggle" label="Open link in a new window?" default="No">
+                <radio-item value="Yes"/>
+                <radio-item value="No"/>
+            </text>
+        </group>
+        <asset type="file" identifier="Image" label="YoutubeImage" required="true"/>
+        <text identifier="youtube" label="YouTube Video" required="true" regular-expression="/^https:\/\/www\.youtube\.com\/watch\?v=.*$/" input-data-format="the URL from your browser location bar while viewing a YouTube video"/>
+    </group>
+    <text wysiwyg="true" identifier="subtitle" label="WYSIWYG"/>
+</system-data-structure>

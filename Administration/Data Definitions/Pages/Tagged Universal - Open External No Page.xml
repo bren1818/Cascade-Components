@@ -1,0 +1,92 @@
+<system-data-structure>
+    <group identifier="content-tags" label="Content Tags">
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal" required="true">
+            <radio-item value="Internal" show-fields="banner/banner-image/page"/>
+            <radio-item value="External" show-fields="banner/banner-image/url, content-tags/url"/>
+        </text>
+        <text identifier="url" label="External URL" required="true"/>
+        <text type="dropdown" identifier="tags" label="Tags" multiple="true" required="true">
+            <dropdown-item value="Homepage"/>
+            <dropdown-item value="Future Students"/>
+            <dropdown-item value="Alumni"/>
+            <dropdown-item value="Giving"/>
+            <dropdown-item value="Faculty of Arts"/>
+            <dropdown-item value="Faculty of Education"/>
+            <dropdown-item value="Faculty of Liberal Arts"/>
+            <dropdown-item value="Faculty of Human and Social Sciences"/>
+            <dropdown-item value="Faculty of Sciences"/>
+            <dropdown-item value="School of Business and Economics"/>
+            <dropdown-item value="School of International Policy and Governance"/>
+            <dropdown-item value="Faculty of Graduate and Postdoctoral Studies"/>
+            <dropdown-item value="Research"/>
+            <dropdown-item value="Library"/>
+            <dropdown-item value="News"/>
+            <dropdown-item value="No-Tag"/>
+        </text>
+        <asset type="file" identifier="spotlight-image" label="Spotlight Image" required="true"/>
+    </group>
+    <group identifier="banner" label="Banner Options">
+        <text type="radiobutton" identifier="banner-type" label="Banner Type" default="Banner Bank" required="true">
+            <radio-item value="Banner Bank" show-fields="banner/banner-bank"/>
+            <radio-item value="Single Image" show-fields="banner/banner-image"/>
+            <radio-item value="None"/>
+        </text>
+        <asset type="block" identifier="banner-bank" label="Banner Bank Block" render-content-depth="2" required="true"/>
+        <group identifier="banner-image" label="Image Details">
+            <asset type="file" identifier="image" label="Image (890 x 430)" required="true"/>
+            <text identifier="alt" label="Alternate Text" required="true"/>
+            <text type="radiobutton" identifier="banner-overlay-toggle" label="Overlay this banner with text?" default="No">
+                <radio-item value="Yes" show-fields="banner/banner-image/title, banner/banner-image/heading, banner/banner-image/content, banner/banner-image/callout-button-toggle"/>
+                <radio-item value="No"/>
+            </text>
+            <text identifier="title" label="Title" required="true"/>
+            <text identifier="heading" label="Heading" required="true"/>
+            <text multi-line="true" identifier="content" label="Content" required="true"/>
+            <text type="radiobutton" identifier="callout-button-toggle" label="Use a callout button?" default="No">
+                <radio-item value="Yes" show-fields="banner/banner-image/button-text, banner/banner-image/link-type"/>
+                <radio-item value="No"/>
+            </text>
+            <text identifier="button-text" label="Button Text" required="true"/>
+            <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+                <radio-item value="Internal" show-fields="banner/banner-image/page"/>
+                <radio-item value="External" show-fields="banner/banner-image/url"/>
+            </text>
+            <asset type="page" identifier="page" label="Page" required="true"/>
+            <text identifier="url" label="External URL" required="true"/>
+        </group>
+    </group>
+    <group identifier="main-content" label="Main Content">
+        <asset type="block" identifier="left-col-spifs" label="Left Column SPIF(s)" multiple="true" render-content-depth="2"/>
+        <text type="radiobutton" identifier="sidebar-quote-toggle" label="Use a sidebar quote?" default="No">
+            <radio-item value="Yes" show-fields="main-content/sidebar-content, main-content/show-sidebar-quote"/>
+            <radio-item value="No"/>
+        </text>
+        <text type="radiobutton" identifier="show-sidebar-quote" label="Show quotation icon in sidebar?" default="No">
+            <radio-item value="Yes"/>
+            <radio-item value="No"/>
+        </text>
+        <text wysiwyg="true" identifier="sidebar-content" label="Sidebar Content" required="true"/>
+        <group identifier="section" label="Content Section" multiple="true">
+            <text type="radiobutton" identifier="section-type" label="Section Type">
+                <radio-item value="Full width copy" show-fields="main-content/section/copy-section"/>
+                <radio-item value="Callout with Sidebar" show-fields="main-content/section/callout-section"/>
+            </text>
+            <group identifier="copy-section" label="Copy Section">
+                <asset type="block" identifier="spif-block" label="Right Column SPIF Block (optional)" render-content-depth="2"/>
+                <text wysiwyg="true" identifier="content" label="Content"/>
+            </group>
+            <group identifier="callout-section" label="Callout Section">
+                <text wysiwyg="true" identifier="content" label="Content" required="true"/>
+                <text type="radiobutton" identifier="sidebar-toggle" label="Show sidebar?" default="Yes">
+                    <radio-item value="Yes" show-fields="main-content/section/callout-section/sidebar-title, main-content/section/callout-section/sidebar-content"/>
+                    <radio-item value="No"/>
+                </text>
+                <text identifier="sidebar-title" label="Sidebar Title (optional)"/>
+                <text wysiwyg="true" identifier="sidebar-content" label="Sidebar Content" required="true"/>
+            </group>
+        </group>
+    </group>
+    <group identifier="footer-spif" label="Footer SPIF">
+        <asset type="block" identifier="spif-block" label="SPIF Block" render-content-depth="2"/>
+    </group>
+</system-data-structure>

@@ -1,0 +1,50 @@
+<system-data-structure>
+    <group identifier="main-content" label="Main Content">
+        <text identifier="individual-title" label="Individual Title" required="true"/>
+        <text type="radiobutton" identifier="sidebar-quote-toggle" label="Use a sidebar quote?" default="No">
+            <radio-item value="Yes" show-fields="main-content/sidebar-content, main-content/show-sidebar-quote"/>
+            <radio-item value="No"/>
+        </text>
+        <text type="radiobutton" identifier="show-sidebar-quote" label="Show quotation icon in sidebar?" default="No">
+            <radio-item value="Yes"/>
+            <radio-item value="No"/>
+        </text>
+        <text wysiwyg="true" identifier="sidebar-content" label="Sidebar Content" required="true"/>
+        <text wysiwyg="true" identifier="content" label="Content (optional)"/>
+    </group>
+    <group identifier="profile-info" label="Profile Information">
+        <asset type="file" identifier="image" label="Profile Image (270 x 270, optional)"/>
+        <text identifier="email-link-text" label="Email Link Text"/>
+        <text identifier="email" label="Email"/>
+        <text identifier="phone" label="Phone"/>
+        <text identifier="fax" label="Fax"/>
+        <text identifier="office-location" label="Office Location"/>
+        <text wysiwyg="true" identifier="office-hours" label="Office Hours" wysiwyg-toolbar-remove="font formatting,font assignment,text formatting,insert image,insert table,html view,"/>
+        <text identifier="languages-spoken" label="Langauges Spoken"/>
+    </group>
+    <group identifier="accordion-info" label="Accordion Information">
+        <group identifier="biography" label="Biography / Academic Background" collapsed="true">
+            <text wysiwyg="true" identifier="content" label="Content"/>
+        </group>
+        <group identifier="research-projects" label="Research Interests / Ongoing Projects" collapsed="true">
+            <text wysiwyg="true" identifier="content" label="Content"/>
+        </group>
+        <group identifier="awards-achievements" label="Awards and Achievements" collapsed="true">
+            <text wysiwyg="true" identifier="content" label="Content"/>
+        </group>
+        <group identifier="students-supervising" label="Student Opportunities / Supervising" collapsed="true">
+            <text wysiwyg="true" identifier="content" label="Content"/>
+        </group>
+        <group identifier="selected-publications" label="Selected Publications" collapsed="true">
+            <text wysiwyg="true" identifier="content" label="Content"/>
+        </group>
+        <text type="radiobutton" identifier="additional-info-toggle" label="Is there additional information for this section?" default="No">
+            <radio-item value="Yes" show-fields="accordion-info/additional-info"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="additional-info" label="Additional Information" multiple="true">
+            <text identifier="heading" label="Heading" required="true"/>
+            <text wysiwyg="true" identifier="content" label="Content" required="true"/>
+        </group>
+    </group>
+</system-data-structure>

@@ -1,0 +1,3 @@
+Configuration Set	:	Programs Universal Page
+Metadata Set		:	Page
+Data Definition		:	Pages/Universal Page

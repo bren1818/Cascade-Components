@@ -1,0 +1,17 @@
+<system-data-structure>
+    <text identifier="key" label="key - do not change" restrict-to-groups="Administrators" default="cta"/>
+    <text identifier="heading" label="Heading"/>
+    <group identifier="link" label="Link" multiple="true">
+        <text identifier="link-text" label="Link Text"/>
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+            <radio-item value="Internal" show-fields="link/page"/>
+            <radio-item value="External" show-fields="link/url, link/new-window-toggle"/>
+        </text>
+        <asset type="page" identifier="page" label="Page"/>
+        <text identifier="url" label="External URL"/>
+        <text type="radiobutton" identifier="new-window-toggle" label="Open link in a new window?" default="No">
+            <radio-item value="Yes"/>
+            <radio-item value="No"/>
+        </text>
+    </group>
+</system-data-structure>

@@ -1,0 +1,22 @@
+<system-data-structure>
+    <text identifier="key" label="Key - do not change" restrict-to-groups="Administrators" default="contact"/>
+    <text wysiwyg="true" identifier="content" label="Content" required="true" wysiwyg-toolbar-remove="font formatting,font assignment,text formatting,insert image,insert table,html view,"/>
+    <text type="dropdown" identifier="color" label="Color" required="true">
+        <dropdown-item value="Gold"/>
+        <dropdown-item value="Green"/>
+        <dropdown-item value="Red"/>
+        <dropdown-item value="Purple"/>
+    </text>
+    <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+        <radio-item value="None"/>
+        <radio-item value="Internal" show-fields="page, link-text"/>
+        <radio-item value="External" show-fields="url, link-text"/>
+    </text>
+    <text identifier="link-text" label="Link Text" required="true"/>
+    <asset type="page" identifier="page" label="Page" required="true"/>
+    <text identifier="url" label="External URL" required="true"/>
+    <text type="radiobutton" identifier="new-window-toggle" label="Open link in a new window?" default="No">
+        <radio-item value="Yes"/>
+        <radio-item value="No"/>
+    </text>
+</system-data-structure>

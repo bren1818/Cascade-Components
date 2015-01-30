@@ -1,0 +1,3 @@
+Configuration Set	:	Degrees and Programs
+Metadata Set		:	Page
+Data Definition		:	Pages/Degrees and Programs

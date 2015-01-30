@@ -1,0 +1,82 @@
+<system-data-structure>
+    <text identifier="key" label="Key - do not change" restrict-to-groups="Administrators" default="advanced-contact"/>
+    <text identifier="title" label="Title"/>
+    <group identifier="contact-info-fields" label="Contact Info Fields" multiple="true">
+        <text identifier="subHead" label="Subhead"/>
+        <text identifier="email-link-text" label="Email Link Text"/>
+        <text identifier="email" label="Email"/>
+        <text identifier="phone" label="Phone"/>
+        <text identifier="fax" label="Fax"/>
+        <text identifier="office-location" label="Office Location"/>
+        <text wysiwyg="true" identifier="office-hours" label="Office Hours" wysiwyg-toolbar-remove="font formatting,font assignment,text formatting,insert image,insert table,html view,"/>
+    </group>
+    <group identifier="socialMedia" label="Social Media">
+        <text type="radiobutton" identifier="enableFacebook" label="Enable Facebook" default="No" required="true">
+            <radio-item value="Yes" show-fields="socialMedia/Facebook"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="Facebook" label="Facebook">
+            <text identifier="title" label="Title" required="true"/>
+            <text identifier="url" label="URL" required="true"/>
+        </group>
+        <text type="radiobutton" identifier="enableTwitter" label="Enable Twitter" default="No" required="true">
+            <radio-item value="Yes" show-fields="socialMedia/Twitter"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="Twitter" label="Twitter">
+            <text identifier="title" label="Title" required="true"/>
+            <text identifier="url" label="URL" required="true"/>
+        </group>
+        <text type="radiobutton" identifier="enableInstagram" label="Enable Instagram" default="No" required="true">
+            <radio-item value="Yes" show-fields="socialMedia/Instagram"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="Instagram" label="Instagram">
+            <text identifier="title" label="Title" required="true"/>
+            <text identifier="url" label="URL" required="true"/>
+        </group>
+        <text type="radiobutton" identifier="enableYoutube" label="Enable Youtube" default="No" required="true">
+            <radio-item value="Yes" show-fields="socialMedia/Youtube"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="Youtube" label="YouTube">
+            <text identifier="title" label="Title" required="true"/>
+            <text identifier="url" label="URL" required="true"/>
+        </group>
+        <text type="radiobutton" identifier="enableLinkedin" label="Enabled Linked In" default="No" required="true">
+            <radio-item value="Yes" show-fields="socialMedia/Linkedin"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="Linkedin" label="LinkedIn">
+            <text identifier="title" label="Title" required="true"/>
+            <text identifier="url" label="URL" required="true"/>
+        </group>
+        <text type="radiobutton" identifier="enableYASM" label="Enable Additional Social Media" default="No" required="true">
+            <radio-item value="Yes" show-fields="socialMedia/YASM"/>
+            <radio-item value="No"/>
+        </text>
+        <group identifier="YASM" label="Yet Another Social Media" multiple="true" maximum-number="4" minimum-number="0">
+            <text identifier="title" label="Title" required="true"/>
+            <text identifier="url" label="URL" required="true"/>
+        </group>
+    </group>
+    <text wysiwyg="true" identifier="content" label="Content" wysiwyg-toolbar-remove="font formatting,font assignment,text formatting,insert image,insert table,html view,"/>
+    <text type="radiobutton" identifier="show-link" label="Show A Link" default="No" required="true">
+        <radio-item value="Yes" show-fields="link"/>
+        <radio-item value="No"/>
+    </text>
+    <group identifier="link" label="URL Field">
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+            <radio-item value="None"/>
+            <radio-item value="Internal" show-fields="link/page"/>
+            <radio-item value="External" show-fields="link/url"/>
+        </text>
+        <text identifier="link-text" label="Link Text" required="true"/>
+        <asset type="page" identifier="page" label="Page" required="true"/>
+        <text identifier="url" label="External URL" required="true"/>
+        <text type="radiobutton" identifier="new-window-toggle" label="Open link in a new window?" default="No">
+            <radio-item value="Yes"/>
+            <radio-item value="No"/>
+        </text>
+    </group>
+</system-data-structure>

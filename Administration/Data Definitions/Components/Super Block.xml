@@ -1,0 +1,7 @@
+<system-data-structure>
+    <asset type="block" identifier="block1" render-content-depth="2"/>
+    <asset type="block" identifier="block2" render-content-depth="2"/>
+    <asset type="block" identifier="block3" render-content-depth="2"/>
+    <asset type="block" identifier="block4" label="block4" render-content-depth="2"/>
+    <asset type="block" identifier="block5" label="block5" render-content-depth="2"/>
+</system-data-structure>

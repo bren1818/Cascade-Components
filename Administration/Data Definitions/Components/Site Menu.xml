@@ -1,0 +1,34 @@
+<system-data-structure>
+    <group identifier="link-list" label="Link List" multiple="true">
+        <text identifier="heading" label="Heading"/>
+        <text identifier="link-text" label="Link Text"/>
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="No Link">
+            <radio-item value="Internal" show-fields="link-list/page"/>
+            <radio-item value="External" show-fields="link-list/url"/>
+            <radio-item value="No Link"/>
+        </text>
+        <asset type="page" identifier="page" label="Page"/>
+        <text identifier="url" label="External URL"/>
+        <group identifier="link" label="Link" multiple="true">
+            <text identifier="link-text" label="Link Text"/>
+            <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+                <radio-item value="Internal"/>
+                <radio-item value="External"/>
+            </text>
+            <asset type="page" identifier="page" label="Page"/>
+            <text identifier="url" label="External URL"/>
+        </group>
+    </group>
+    <group identifier="inline-links" label="Inline Links">
+        <group identifier="link" label="Link" multiple="true" maximum-number="1" minimum-number="3">
+            <text identifier="link-text" label="Link Text"/>
+            <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+                <radio-item value="Internal"/>
+                <radio-item value="External"/>
+            </text>
+            <asset type="page" identifier="page" label="Page"/>
+            <text identifier="url" label="External URL"/>
+        </group>
+    </group>
+    <text identifier="extra-slide" label="Include which slide from the Look Into Laurier feature?" default="5" required="true"/>
+</system-data-structure>

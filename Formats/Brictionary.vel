@@ -1,0 +1,37 @@
+<![CDATA[#protect-top 
+##set($replaceSite = $_XPathTool.selectSingleNode($contentRoot, "//site-url") )
+#set($Brictionary = $_XPathTool.selectNodes($contentRoot, "//system-index-block[@name='Brictionary']/system-block/system-data-structure") )
+var dictionary = [
+#foreach( $page in $Brictionary)
+    #set( $brickName = $page.getChild('brickName').value )
+    #set( $brickType = $page.getChild('brickType').value )
+    #if( $brickType != "sentence" )
+        #set( $value =  $page.getChild('brickValueWord').value ) 
+    #else
+        #set($value = "")
+       #set( $xml = $_XPathTool.selectSingleNode($page, "brickValueSentence") )
+        ## Test to see if the Element's value is not empty, or if the Element has children
+        #if ($xml.value != "" or $xml.getChildren().size() > 0)
+            #set ($value = $_SerializerTool.serialize($xml, true).replaceAll("'", "\\'") ) ##.replaceAll("site://www.wlu.ca/", "${replaceSite.value}" )
+            ##set ($value = ( ${_EscapeTool.java($_SerializerTool.serialize($xml, true))} ) )
+            ##set ($value = $_SerializerTool.serialize($xml, true) )
+        #end
+    #end
+new Array("$brickName", '$value'),  
+#end
+new Array("END_OF_DICTIONARY","TRUE")
+];
+
+$(function(){
+    $('.contentReplacementContainer').each(function(){
+        var content = $(this).html();
+        for(var index = 0; index < dictionary.length; index++){
+            content = content.replace( dictionary[index][0] ,  dictionary[index][1]);
+            console.log( "replacing: " + dictionary[index][0] + " with " +  dictionary[index][1]);
+        }
+        $(this).html( content );
+    });
+});
+
+<!--#cascade-skip--> 
+#protect-top]]> 

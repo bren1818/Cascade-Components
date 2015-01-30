@@ -1,0 +1,76 @@
+<system-data-structure>
+  <group identifier="Programs" label="Programs" multiple="true">
+    <group identifier="Program" label="Program">
+      <text identifier="Program_Name" label="Program Name" required="true" help-text="Business Administration"/>
+      <text type="dropdown" identifier="degree_name" label="Degree Name" multiple="true" maximum-number="2" minimum-number="1" required="true">
+        <dropdown-item value=""/>
+        <dropdown-item value="Bachelor of Arts"/>
+        <dropdown-item value="Bachelor of Arts and Science"/>
+        <dropdown-item value="Bachelor of Business Administration"/>
+        <dropdown-item value="Bachelor of Business Technology Management"/>
+        <dropdown-item value="Bachelor of Fine and Applied Arts"/>
+        <dropdown-item value="Bachelor of Kinesiology"/>
+        <dropdown-item value="Bachelor of Music"/>
+        <dropdown-item value="Bachelor of Music Therapy"/>
+        <dropdown-item value="Bachelor of Science"/>
+        <dropdown-item value="Bachelor of Social Work"/>
+        <dropdown-item value="Diploma in Accounting"/>
+        <dropdown-item value="Diploma in Business Administration"/>
+        <dropdown-item value="Diploma in Chamber of Music"/>
+        <dropdown-item value="Diploma in Opera"/>
+        <dropdown-item value="Diploma in Performance"/>
+        <dropdown-item value="Bachelor of Education"/>
+        <dropdown-item value="Master of Arts"/>
+        <dropdown-item value="Master of Business Administration"/>
+        <dropdown-item value="Master of Divinity"/>
+        <dropdown-item value="Master of Environmental Studies"/>
+        <dropdown-item value="Master of Finance"/>
+        <dropdown-item value="Master of International Public Policy"/>
+        <dropdown-item value="Doctor of Ministry"/>
+        <dropdown-item value="Master of Music Therapy"/>
+        <dropdown-item value="Doctor of Philosophy"/>
+        <dropdown-item value="Master of Science"/>
+        <dropdown-item value="Master of Social Work"/>
+        <dropdown-item value="Diploma"/>
+        <dropdown-item value="Bachelor of Math"/>
+        <dropdown-item value="Bachelor of Computer Science"/>
+        <dropdown-item value="Master of Applied Politics"/>
+      </text>
+      <text type="dropdown" identifier="Degree_Type" label="Degree Type" default="Undergrad" required="true">
+        <dropdown-item value="Undergrad"/>
+        <dropdown-item value="Masters"/>
+        <dropdown-item value="Doctorate-PhD"/>
+        <dropdown-item value="Diploma"/>
+      </text>
+      <text type="dropdown" identifier="Faculty" label="Faculty" multiple="true" maximum-number="2" required="true">
+        <dropdown-item value="Faculty of Arts"/>
+        <dropdown-item value="School of Business and Economics"/>
+        <dropdown-item value="Faculty of Education"/>
+        <dropdown-item value="Faculty of Human and Social Sciences"/>
+        <dropdown-item value="School of International Policy and Governance"/>
+        <dropdown-item value="Faculty of Liberal Arts"/>
+        <dropdown-item value="Faculty of Music"/>
+        <dropdown-item value="Faculty of Science"/>
+        <dropdown-item value="Faculty of Social Work"/>
+        <dropdown-item value="Waterloo Lutheran Seminary"/>
+      </text>
+      <text type="checkbox" identifier="Location" label="Location" required="true">
+        <checkbox-item value="Waterloo"/>
+        <checkbox-item value="Brantford"/>
+        <checkbox-item value="Kitchener"/>
+        <checkbox-item value="Toronto"/>
+        <checkbox-item value="Milton"/>
+      </text>
+      <text type="checkbox" identifier="Extras" label="Extras">
+        <checkbox-item value="Combined Program"/>
+        <checkbox-item value="Double Degree"/>
+      </text>
+      <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+        <radio-item value="Internal" show-fields="Programs/Program/page"/>
+        <radio-item value="External" show-fields="Programs/Program/url"/>
+      </text>
+      <asset type="page" identifier="page" label="Page" required="true"/>
+      <text identifier="url" label="External URL" required="true"/>
+    </group>
+  </group>
+</system-data-structure>

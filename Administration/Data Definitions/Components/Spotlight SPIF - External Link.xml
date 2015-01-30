@@ -1,0 +1,27 @@
+<system-data-structure>
+    <text type="dropdown" identifier="tags" label="Tags" multiple="true" >
+        <dropdown-item value="Homepage"/>
+        <dropdown-item value="Future Students"/>
+        <dropdown-item value="Alumni"/>
+        <dropdown-item value="Giving"/>
+        <dropdown-item value="Faculty of Arts"/>
+        <dropdown-item value="Faculty of Education"/>
+        <dropdown-item value="Faculty of Liberal Arts"/>
+        <dropdown-item value="Faculty of Human and Social Sciences"/>
+        <dropdown-item value="Faculty of Sciences"/>
+        <dropdown-item value="School of Business and Economics"/>
+        <dropdown-item value="School of International Policy &amp; Governance"/>
+        <dropdown-item value="Faculty of Graduate &amp; Postdoctoral Studies"/>
+        <dropdown-item value="Research"/>
+        <dropdown-item value="Library"/>
+        <dropdown-item value="News"/>
+    </text>
+    <text identifier="title" label="Title"/>
+    <asset type="file" identifier="image" label="Image"/>
+    <text identifier="link-text" label="Link Text"/>
+    <text identifier="url" label="External URL"/>
+    <text type="radiobutton" identifier="new-window-toggle" label="Open link in a new window?" default="Yes">
+        <radio-item value="Yes"/>
+        <radio-item value="No"/>
+    </text>
+</system-data-structure>

@@ -1,0 +1,3 @@
+Configuration Set	:	Footer
+Metadata Set		:	Default
+Data Definition		:	Footer

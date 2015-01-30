@@ -1,0 +1,3 @@
+Configuration Set	:	TemplatePHPComponentPublish
+Metadata Set		:	Default
+Data Definition		:	

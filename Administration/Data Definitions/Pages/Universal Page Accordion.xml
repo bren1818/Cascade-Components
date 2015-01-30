@@ -1,0 +1,59 @@
+<system-data-structure>
+    <group identifier="banner" label="Banner Options">
+        <text type="radiobutton" identifier="banner-type" label="Banner Type" default="Banner Bank" required="true">
+            <radio-item value="Banner Bank" show-fields="banner/banner-bank"/>
+            <radio-item value="Single Image" show-fields="banner/banner-image"/>
+            <radio-item value="None"/>
+        </text>
+        <asset type="block" identifier="banner-bank" label="Banner Bank Block" render-content-depth="2" required="true"/>
+        <group identifier="banner-image" label="Image Details">
+            <asset type="file" identifier="image" label="Image (890 x 430)" required="true"/>
+            <text identifier="alt" label="Alternate Text" required="true"/>
+            <text type="radiobutton" identifier="banner-overlay-toggle" label="Overlay this banner with text?" default="No">
+                <radio-item value="Yes" show-fields="banner/banner-image/title, banner/banner-image/heading, banner/banner-image/content, banner/banner-image/callout-button-toggle"/>
+                <radio-item value="No"/>
+            </text>
+            <text identifier="title" label="Title"/>
+            <text identifier="heading" label="Heading" required="true"/>
+            <text multi-line="true" identifier="content" label="Content" required="true"/>
+            <text type="radiobutton" identifier="callout-button-toggle" label="Use a callout button?" default="No">
+                <radio-item value="Yes" show-fields="banner/banner-image/button-text, banner/banner-image/link-type"/>
+                <radio-item value="No"/>
+            </text>
+            <text identifier="button-text" label="Button Text" required="true"/>
+            <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+                <radio-item value="Internal" show-fields="banner/banner-image/page"/>
+                <radio-item value="External" show-fields="banner/banner-image/url"/>
+            </text>
+            <asset type="page" identifier="page" label="Page" required="true"/>
+            <text identifier="url" label="External URL" required="true"/>
+        </group>
+    </group>
+    <group identifier="main-content" label="Main Content">
+        <asset type="block" identifier="left-col-spifs" label="Left Column SPIF(s)" multiple="true" render-content-depth="2"/>
+        <text type="radiobutton" identifier="sidebar-quote-toggle" label="Use a sidebar quote?" default="No">
+            <radio-item value="Yes" show-fields="main-content/sidebar-content"/>
+            <radio-item value="No"/>
+        </text>
+        <text wysiwyg="true" identifier="sidebar-content" label="Sidebar Content" required="true"/>
+        <group identifier="section" label="Content Section" multiple="true">
+            <text type="radiobutton" identifier="section-type" label="Section Type">
+                <radio-item value="Full width copy" show-fields="main-content/section/copy-section"/>
+                <radio-item value="Full width Accordion" show-fields="main-content/section/accordion-section"/>
+            </text>
+            <group identifier="copy-section" label="Copy Section">
+                <asset type="block" identifier="spif-block" label="Right Column SPIF Block (optional)" render-content-depth="2"/>
+                <text wysiwyg="true" identifier="content" label="Content"/>
+            </group>
+            <group identifier="accordion-section" label="Accordion Section">
+                <group identifier="Accordion_Section" label="Accordion Sections" multiple="true">
+                    <text identifier="Heading" label="Heading" required="true"/>
+                    <text wysiwyg="true" identifier="Content" label="Content" required="true"/>
+                </group>
+            </group>
+        </group>
+    </group>
+    <group identifier="footer-spif" label="Footer SPIF">
+        <asset type="block" identifier="spif-block" label="SPIF Block" render-content-depth="2"/>
+    </group>
+</system-data-structure>

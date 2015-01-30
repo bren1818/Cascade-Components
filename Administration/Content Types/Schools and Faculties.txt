@@ -1,0 +1,3 @@
+Configuration Set	:	Schools and Faculties
+Metadata Set		:	Page
+Data Definition		:	Pages/Schools and Faculties

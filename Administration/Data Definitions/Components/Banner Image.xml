@@ -1,0 +1,24 @@
+<system-data-structure>
+    <group identifier="banner-image" label="Image Details">
+        <asset type="file" identifier="image" label="Image (890 x 430)" required="true"/>
+        <text identifier="alt" label="Alternate Text" required="true"/>
+        <text type="radiobutton" identifier="banner-overlay-toggle" label="Overlay this banner with text?" default="No">
+            <radio-item value="Yes" show-fields="banner-image/title, banner-image/heading, banner-image/content"/>
+            <radio-item value="No"/>
+        </text>
+        <text identifier="title" label="Title" required="true"/>
+        <text identifier="heading" label="Heading" required="true"/>
+        <text multi-line="true" identifier="content" label="Content" required="true"/>
+        <text type="radiobutton" identifier="callout-button-toggle" label="Use a callout button?" default="No">
+            <radio-item value="Yes" show-fields="banner-image/button-text, banner-image/link-type"/>
+            <radio-item value="No"/>
+        </text>
+        <text identifier="button-text" label="Button Text" required="true"/>
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+            <radio-item value="Internal" show-fields="banner-image/page"/>
+            <radio-item value="External" show-fields="banner-image/url"/>
+        </text>
+        <asset type="page" identifier="page" label="Page" required="true"/>
+        <text identifier="url" label="External URL" required="true"/>
+    </group>
+</system-data-structure>

@@ -1,0 +1,38 @@
+<system-data-structure>
+    <text identifier="key" label="key - do not change" restrict-to-groups="Administrators" default="standard"/>
+    <text identifier="title" label="Title"/>
+    <text wysiwyg="true" identifier="subtitle" label="Subtitle"/>
+    <text type="radiobutton" identifier="show-image" label="Show an Image" default="Yes" required="true">
+        <radio-item value="Yes" show-fields="image, alt"/>
+        <radio-item value="No"/>
+    </text>
+    <asset type="file" identifier="image" label="Image" required="true"/>
+    <text identifier="alt" label="Alternate Text" required="true"/>
+    <text type="radiobutton" identifier="show-link" label="Show a link?" default="No" required="true">
+        <radio-item value="Yes" show-fields="link"/>
+        <radio-item value="No"/>
+    </text>
+    <group identifier="link" label="Link">
+        <text identifier="link-text" label="Link Text"/>
+        <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+            <radio-item value="Internal" show-fields="link/page"/>
+            <radio-item value="External" show-fields="link/url"/>
+        </text>
+        <asset type="page" identifier="page" label="Page"/>
+        <text identifier="url" label="External URL"/>
+        <text type="radiobutton" identifier="new-window-toggle" label="Open link in a new window?" default="No">
+            <radio-item value="Yes"/>
+            <radio-item value="No"/>
+        </text>
+    </group>
+    <text type="radiobutton" identifier="choose-background" label="Choose Background Color" default="No" required="true">
+        <radio-item value="Yes" show-fields="color"/>
+        <radio-item value="No"/>
+    </text>
+    <text type="dropdown" identifier="color" label="Color" default="Gold" required="true">
+        <dropdown-item value="Gold"/>
+        <dropdown-item value="Green"/>
+        <dropdown-item value="Red"/>
+        <dropdown-item value="Purple"/>
+    </text>
+</system-data-structure>

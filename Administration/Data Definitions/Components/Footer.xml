@@ -1,0 +1,40 @@
+<system-data-structure>
+    <group identifier="logo" label="Logo" collapsed="true">
+        <asset type="file" identifier="image" label="Logo" required="true"/>
+        <text identifier="alt" label="Alternate Text" required="true"/>
+    </group>
+    <group identifier="links" label="Navigation Links" collapsed="true">
+        <group identifier="link" label="Link" multiple="true">
+            <text identifier="link-text" label="Link Text" required="true"/>
+            <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+                <radio-item value="Internal" show-fields="links/link/page"/>
+                <radio-item value="External" show-fields="links/link/url"/>
+            </text>
+            <asset type="page" identifier="page" label="Page" required="true"/>
+            <text identifier="url" label="External URL" required="true"/>
+        </group>
+    </group>
+    <group identifier="locations" label="Locations" collapsed="true">
+        <group identifier="link" label="Link" multiple="true">
+            <text identifier="link-text" label="Link Text" required="true"/>
+            <text type="radiobutton" identifier="link-type" label="Link Type" default="Internal">
+                <radio-item value="Internal" show-fields="locations/link/page"/>
+                <radio-item value="External" show-fields="locations/link/url"/>
+            </text>
+            <asset type="page" identifier="page" label="Page" required="true"/>
+            <text identifier="url" label="External URL" />
+        </group>
+    </group>
+    <group identifier="social-media" label="Social Media" collapsed="true">
+        <group identifier="link" label="Link" multiple="true">
+            <text type="dropdown" identifier="network" label="Network" required="true">
+                <dropdown-item value="Facebook"/>
+                <dropdown-item value="Instagram"/>
+                <dropdown-item value="Twitter"/>
+                <dropdown-item value="LinkedIn"/>
+                <dropdown-item value="Email"/>
+            </text>
+            <text identifier="url" label="URL" required="true"/>
+        </group>
+    </group>
+</system-data-structure>
