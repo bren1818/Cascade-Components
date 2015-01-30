@@ -1,0 +1,86 @@
+* {
+}
+/* going away with adjustments to the presentation CSS */
+/*
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul:before {
+    content: 'For a bulleted list, convert this to an ordered list (numbered) and apply the class "disc" from the styles list"';
+    display: block;
+    color: #fafafa;
+    background: red;
+    padding: 10px;
+}
+
+ol.disc > li {
+    margin: 0 0 20px 20px;
+    list-style: disc;
+}
+*/
+
+/* end going away */
+
+/* buttons */
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    white-space: normal;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 40px;
+    margin-bottom: 0;
+    font-size: 100%;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    text-decoration: none!important;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 2px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+}
+
+.btn.gray {
+    background: transparent;
+    border-color: #444444;
+    color: #444444;
+}
+
+.btn.green {
+    background: transparent;
+    border-color: #69702E;
+    color: #69702E;
+}
+
+.btn.red {
+    background: transparent;
+    border-color: #EE2737;
+    color: #EE2737;
+}
+
+.btn.purple {
+    background: transparent;
+    border-color: #2F0070;
+    color: #2F0070;
+}
+
+
+.text.redtext{ color: #DB2C39; }
+.text.purpletext{ color: #330072;}
+.text.greentext{ color: #6B7036; }
+.text.goldtext{ color: #F2A900;}
